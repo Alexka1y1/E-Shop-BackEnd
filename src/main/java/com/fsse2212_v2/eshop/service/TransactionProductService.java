@@ -7,4 +7,6 @@ import java.util.List;
 public interface TransactionProductService {
 
     List<TransactionProductEntity> saveTransactionProduct(List<TransactionProductEntity> transactionProducts);
+
+    List<TransactionProductEntity> getAllTransactionProductByTid(Integer tid);
 }

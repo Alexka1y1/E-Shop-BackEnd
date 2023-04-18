@@ -1,5 +1,6 @@
 package com.fsse2212_v2.eshop.api;
 
+import com.fsse2212_v2.eshop.config.EnvConfig;
 import com.fsse2212_v2.eshop.data.cartItem.exception.BadRequestException;
 import com.fsse2212_v2.eshop.data.product.data.ProductRequestData;
 import com.fsse2212_v2.eshop.data.product.data.ProductResponseData;
@@ -14,7 +15,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @RestController
-@CrossOrigin("http://localhost:3000")
+@CrossOrigin({EnvConfig.devBaseUrl,EnvConfig.productionBaseUrl})
 @RequestMapping("/public/product")
 public class ProductApi {
     public final ProductService productService;

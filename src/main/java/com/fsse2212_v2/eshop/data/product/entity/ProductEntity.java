@@ -32,6 +32,12 @@ public class ProductEntity {
     @Column(name = "category",nullable = false)
     private String category;
 
+    @Column(nullable = true)
+    private  String stripePriceId;
+
+    @Column
+    private  String stripeProductId;
+
     @OneToMany(mappedBy = "product")
     private List<CartItemEntity> cartItemEntityList;
 
@@ -46,6 +52,8 @@ public class ProductEntity {
         this.price = requestData.getPrice();
         this.stock = requestData.getStock();
         this.category =requestData.getCategory();
+        this.stripePriceId = requestData.getStripePriceId();
+        this.stripeProductId = requestData.getStripeProductId();
     }
 
     public Integer getPid() {
@@ -111,4 +119,22 @@ public class ProductEntity {
     public void setCategory(String category) {
         this.category = category;
     }
+
+    public String getStripePriceId() {
+        return stripePriceId;
+    }
+
+    public void setStripePriceId(String stripePriceId) {
+        this.stripePriceId = stripePriceId;
+    }
+
+    public String getStripeProductId() {
+        return stripeProductId;
+    }
+
+    public void setStripeProductId(String stripeProductId) {
+        this.stripeProductId = stripeProductId;
+    }
+
+
 }

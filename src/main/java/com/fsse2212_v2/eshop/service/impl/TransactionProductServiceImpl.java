@@ -22,7 +22,11 @@ public class TransactionProductServiceImpl implements TransactionProductService 
    @Override
     public List<TransactionProductEntity> saveTransactionProduct(List<TransactionProductEntity> transactionProducts){
         return (List<TransactionProductEntity>) transactionProductRepository.saveAll(transactionProducts);
+    }
+    @Override
 
+    public List<TransactionProductEntity> getAllTransactionProductByTid(Integer tid){
+        return transactionProductRepository.getAllByTransaction_Tid(tid);
     }
 
 }

@@ -1,5 +1,6 @@
 package com.fsse2212_v2.eshop.api;
 
+import com.fsse2212_v2.eshop.config.EnvConfig;
 import com.fsse2212_v2.eshop.data.transaction.data.TransactionResponseData;
 import com.fsse2212_v2.eshop.data.transaction.dto.TransactionResponseDto;
 import com.fsse2212_v2.eshop.data.transaction.dto.TransactionStatusDto;
@@ -11,7 +12,7 @@ import org.springframework.security.oauth2.server.resource.authentication.JwtAut
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@CrossOrigin("http://localhost:3000")
+@CrossOrigin({EnvConfig.devBaseUrl,EnvConfig.productionBaseUrl})
 @RequestMapping("/transaction")
 public class TransactionApi {
     public final TransactionService transactionService;

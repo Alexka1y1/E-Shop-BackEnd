@@ -33,6 +33,12 @@ public class TransactionProductEntity {
     @Column(nullable = false)
     private Integer quantity;
 
+    @Column(nullable = true)
+    private String stripePriceId;
+
+    @Column(nullable = true)
+    private String stripeProductId;
+
     @Column(nullable = false)
     private BigDecimal subtotal;
 
@@ -53,6 +59,8 @@ public class TransactionProductEntity {
         this.quantity = cartItem.getQuantity();
         setSubtotal(cartItem);
         this.transaction = transactionEntity;
+        this.stripePriceId = cartItem.getProduct().getStripePriceId();
+        this.stripeProductId = cartItem.getProduct().getStripeProductId();
     }
 
 
@@ -131,6 +139,22 @@ public class TransactionProductEntity {
 
     public void setSubtotal(CartItemEntity cartItem){
         this.subtotal = cartItem.getProduct().getPrice().multiply(BigDecimal.valueOf(cartItem.getQuantity()));
+    }
+
+    public String getStripePriceId() {
+        return stripePriceId;
+    }
+
+    public void setStripePriceId(String stripePriceId) {
+        this.stripePriceId = stripePriceId;
+    }
+
+    public String getStripeProductId() {
+        return stripeProductId;
+    }
+
+    public void setStripeProductId(String stripeProductId) {
+        this.stripeProductId = stripeProductId;
     }
 
     public TransactionEntity getTransaction() {

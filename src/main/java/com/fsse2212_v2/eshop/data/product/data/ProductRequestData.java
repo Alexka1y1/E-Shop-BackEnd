@@ -11,6 +11,8 @@ public class ProductRequestData {
     private BigDecimal price;
     private Integer stock;
     private String category;
+    private String stripePriceId;
+    private String stripeProductId;
 
     public ProductRequestData(ProductRequestDto requestDto) {
         this.name = requestDto.getName();
@@ -19,6 +21,16 @@ public class ProductRequestData {
         this.price = requestDto.getPrice();
         this.stock = requestDto.getStock();
         this.category = requestDto.getDescription();
+        this.stripePriceId = requestDto.getStripePriceId();
+        this.stripeProductId = requestDto.getStripeProductId();
+    }
+
+    public String getStripeProductId() {
+        return stripeProductId;
+    }
+
+    public void setStripeProductId(String stripeProductId) {
+        this.stripeProductId = stripeProductId;
     }
 
     public String getName() {
@@ -67,5 +79,13 @@ public class ProductRequestData {
 
     public void setCategory(String category) {
         this.category = category;
+    }
+
+    public String getStripePriceId() {
+        return stripePriceId;
+    }
+
+    public void setStripePriceId(String stripePriceId) {
+        this.stripePriceId = stripePriceId;
     }
 }

@@ -23,6 +23,28 @@ public class ProductRequestDto {
     @JsonProperty("category")
     private String category;
 
+    @JsonProperty("stripe_priceId")
+    private String stripePriceId;
+
+    @JsonProperty("stripe_productId")
+    private String stripeProductId;
+
+    public String getStripePriceId() {
+        return stripePriceId;
+    }
+
+    public void setStripePriceId(String stripePriceId) {
+        this.stripePriceId = stripePriceId;
+    }
+
+    public String getStripeProductId() {
+        return stripeProductId;
+    }
+
+    public void setStripeProductId(String stripeProductId) {
+        this.stripeProductId = stripeProductId;
+    }
+
     public String getName() {
         return name;
     }
