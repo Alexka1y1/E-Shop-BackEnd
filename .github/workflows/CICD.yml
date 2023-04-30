@@ -88,4 +88,4 @@ jobs:
 
           docker rm project_backend
 
-          docker run -d --name project_backend -p 8080:8080 ka1yy1/fsse2212_project_backend:${{ github.sha }}
+          docker run -d --name project_backend -p 8080:8080 ${{ secrets.DOCKERHUB_USERNAME }}/fsse2212_project_backend:${{ github.sha }}
