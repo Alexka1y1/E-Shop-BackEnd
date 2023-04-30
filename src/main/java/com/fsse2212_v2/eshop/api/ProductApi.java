@@ -35,14 +35,20 @@ public class ProductApi {
         return new ProductResponseDto(productService.createProduct(new ProductRequestData(productRequestDto)));
     }
 
+//    @GetMapping("")
+//    // Get all the product
+//    public List<ProductToClientDto> getAllProduct(){
+//        List<ProductToClientDto> productToClientDtoList = new ArrayList<>();
+//        for (ProductResponseData data: productService.getAllProduct()){
+//            productToClientDtoList.add(new ProductToClientDto(data));
+//        }
+//        return productToClientDtoList;
+//    }
+
     @GetMapping("")
     // Get all the product
-    public List<ProductToClientDto> getAllProduct(){
-        List<ProductToClientDto> productToClientDtoList = new ArrayList<>();
-        for (ProductResponseData data: productService.getAllProduct()){
-            productToClientDtoList.add(new ProductToClientDto(data));
-        }
-        return productToClientDtoList;
+    public String getAllProduct(){
+        return "productToClientDtoList";
     }
 
     @GetMapping("/{id}") // get the product by Id
